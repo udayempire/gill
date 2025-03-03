@@ -1,0 +1,490 @@
+{
+  "version": "0.1.0",
+  "name": "sns-registrar",
+  "instructions": [
+    {
+      "name": "create_reverse",
+      "accounts": [
+        {
+          "name": "namingServiceProgram",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "rootDomain",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "reverseLookup",
+          "isMut": true,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "centralState",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "feePayer",
+          "isMut": true,
+          "isSigner": true,
+          "isOptional": false
+        },
+        {
+          "name": "rentSysvar",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "parentName",
+          "isMut": true,
+          "isSigner": false,
+          "isOptional": true
+        },
+        {
+          "name": "parentNameOwner",
+          "isMut": true,
+          "isSigner": true,
+          "isOptional": true
+        }
+      ],
+      "args": [
+        {
+          "name": "name",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "create",
+      "accounts": [
+        {
+          "name": "namingServiceProgram",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "rootDomain",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "name",
+          "isMut": true,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "reverseLookup",
+          "isMut": true,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "centralState",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "buyer",
+          "isMut": true,
+          "isSigner": true,
+          "isOptional": false
+        },
+        {
+          "name": "buyerTokenSource",
+          "isMut": true,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "pythMappingAcc",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "pythProductAcc",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "pythPriceAcc",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "vault",
+          "isMut": true,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "splTokenProgram",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "rentSysvar",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "state",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "referrerAccountOpt",
+          "isMut": true,
+          "isSigner": false,
+          "isOptional": true
+        }
+      ],
+      "args": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "space",
+          "type": "u32"
+        },
+        {
+          "name": "referrerIdxOpt",
+          "type": "u8"
+        }
+      ]
+    },
+    {
+      "name": "delete",
+      "accounts": [
+        {
+          "name": "nameServiceId",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "domain",
+          "isMut": true,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "reverse",
+          "isMut": true,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "resellingState",
+          "isMut": true,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "state",
+          "isMut": true,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "centralState",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "owner",
+          "isMut": false,
+          "isSigner": true,
+          "isOptional": false
+        },
+        {
+          "name": "target",
+          "isMut": true,
+          "isSigner": false,
+          "isOptional": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "create_with_nft",
+      "accounts": [
+        {
+          "name": "namingServiceProgram",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "rootDomain",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "name",
+          "isMut": true,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "reverseLookup",
+          "isMut": true,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "centralState",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "buyer",
+          "isMut": true,
+          "isSigner": true,
+          "isOptional": false
+        },
+        {
+          "name": "nftSource",
+          "isMut": true,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "nftMetadata",
+          "isMut": true,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "nftMint",
+          "isMut": true,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "masterEdition",
+          "isMut": true,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "collectionMetadata",
+          "isMut": true,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "splTokenProgram",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "rentSysvar",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "state",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "mplTokenMetadata",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        }
+      ],
+      "args": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "space",
+          "type": "u32"
+        }
+      ]
+    },
+    {
+      "name": "create_split_v2",
+      "accounts": [
+        {
+          "name": "namingServiceProgram",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "rootDomain",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "name",
+          "isMut": true,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "reverseLookup",
+          "isMut": true,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "centralState",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "buyer",
+          "isMut": true,
+          "isSigner": true,
+          "isOptional": false
+        },
+        {
+          "name": "domainOwner",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "feePayer",
+          "isMut": true,
+          "isSigner": true,
+          "isOptional": false
+        },
+        {
+          "name": "buyerTokenSource",
+          "isMut": true,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "pythFeedAccount",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "vault",
+          "isMut": true,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "splTokenProgram",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "rentSysvar",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "state",
+          "isMut": false,
+          "isSigner": false,
+          "isOptional": false
+        },
+        {
+          "name": "referrerAccountOpt",
+          "isMut": true,
+          "isSigner": false,
+          "isOptional": true
+        }
+      ],
+      "args": [
+        {
+          "name": "name",
+          "type": "string"
+        },
+        {
+          "name": "space",
+          "type": "u32"
+        },
+        {
+          "name": "referrerIdxOpt",
+          "type": "u8"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "ReverseLookup",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "AccountTag",
+            "type": "u64"
+          },
+          {
+            "name": "name",
+            "type": "string"
+          }
+        ]
+      }
+    }
+  ]
+}
