@@ -45,6 +45,9 @@ export function load(app) {
     }
 
     page.contents = page.contents.replace(/\(((?:[^\/\)]+\/)*[^\/\)]+)\.mdx\)/gm, (_, path) => {
+      // Remove trailing /index routes
+      if (path.endsWith("/index")) path = path.replace(/\/index$/gi, "");
+
       const rootRelativeUrl = resolve(`/api/${apiDirName}`, dirname(page.url), path);
       return `(${rootRelativeUrl})`;
     });
