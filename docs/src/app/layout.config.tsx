@@ -29,16 +29,16 @@ export const baseOptions: BaseLayoutProps = {
       icon: <BookTextIcon />,
     },
     {
-      text: "API Reference",
-      url: "/api",
-      active: "nested-url",
-      icon: <CodeXmlIcon />,
-    },
-    {
       text: "Guides",
       url: "/guides",
       active: "nested-url",
       icon: <ShapesIcon />,
+    },
+    {
+      text: "API Reference",
+      url: "/api",
+      active: "nested-url",
+      icon: <CodeXmlIcon />,
     },
   ],
 };
