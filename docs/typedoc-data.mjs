@@ -19,6 +19,13 @@ export const typedocPageIndexData = {
         "Functions and utilities designed for interacting with the Solana blockchain using JavaScript server backends and runtimes.",
     },
   },
+  "gill-programs": {
+    frontmatter: {
+      title: "gill/programs",
+      description:
+        "Utilize the compatible Solana program clients that ship directly within gill. Including common programs from the official Solana Program Library (SPL), Metaplex, and others.",
+    },
+  },
   react: {
     frontmatter: {
       title: "gill-react",
